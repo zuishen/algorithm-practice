@@ -35,3 +35,8 @@ public class Solution {
 // 递归三要素： 1. 递归的定义（接收什么样的参数，返回什么值，做了什么事）
 //            2. 递归的拆解
 //            3. 递归的出口 （什么时候不忘下递归了， 可以直接找到答案出口）
+//
+// The template of permutation/combination question:
+// Applicable Scope: nearly all searching questions
+// permutations / unique permutations / combination sum / letter combination of a phone number / palindrome partitioning
+// / restore IP address.
