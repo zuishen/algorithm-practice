@@ -24,7 +24,7 @@ public class Solution {
     }
 }
 
-// Use two loops to solve this question
+// Use two loops to find the first occurrence in haystack
 // Watch out the outer loop condition: i <= haystack.length() - needle.length()
 // This means if the left of haystack is shorter than needle, it's impossilbe to 
 //  find this needle.
