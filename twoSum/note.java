@@ -7,7 +7,7 @@
 
 	// Test Case:  when nums == null; nums.length = 0; nums.length = 1; duplicate values?
 
-	Solution1:
+	Solution1:  // O(n^2) O(1)
 		two loops.
 			for (int i = 0; i < nums.length; i++) {
 				for (int j = i + 1; j < nums.length; j++) {
@@ -31,4 +31,14 @@
 					return new int[]{i, map.get(target - nums[i])};
 				}
 			}
+	Solution3: // use only one loop, check and then put in map. Since putting operations is after checking, so no need to consider dupicates.
+		Map<Integer, Integer> map = new HashMap<>();
+		for (int i = 0; i < nums.length; i++) {
+			if (map.containsKey(target - nums[i])) {
+				return new int[]{map.get(target - nums[i]), i};	// watch out the order.
+			}
+			map.put(nums[i], i);
+		}
+
+	//O(N)  O(N)
 
