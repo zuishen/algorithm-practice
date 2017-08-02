@@ -18,5 +18,30 @@ public class Solution {
             x = x / 10;
         }
         return ret * flag;
+       
+        /*
+        Solution 2: * long a = 1534236469 * 10;  依然会溢出，因为是以整型数计算，然后将计算的结果type cast后放入a中
+                      而代码中先声明了一个long ret，所以计算 ret * 10 时会以long类型进行计算，1534236469L * 10.
+                  
+        int flag = x >= 0 ? 1: -1;
+        x = Math.abs(x);
+        long ret = 0;
+        while (x != 0) {
+            int digit = x % 10;
+            if (10 * ret < 0) {
+                return 0;
+            }
+            ret = 10 * ret + digit;
+            if (ret > Integer.MAX_VALUE) {
+                return 0;
+            }
+            //    if ((ret - digit) / 10 != original) {
+            //        return 0;
+            //    }
+            //
+            x = x / 10;
+        }
+        return (int)ret * flag;
+        */
     }
 }
