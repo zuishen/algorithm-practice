@@ -16,6 +16,6 @@ public class Solution {
             }
             x = x / 10;
         }
-        return ret;
+        return ret * flag;
     }
 }
