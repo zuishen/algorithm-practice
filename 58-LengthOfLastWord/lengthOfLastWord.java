@@ -18,7 +18,7 @@ public class Solution {
                 break;
             }
         }
-        for (int i = s.length() - 1; i >= 0; i--) {
+        for (int i = end; i >= 0; i--) {
             if (s.charAt(i) == ' ') {
                 start = i;
                 break;
