@@ -26,7 +26,6 @@ public class Solution {
         }
         return end - start;
     }
-}
 /*
 *   思路：考虑了由前往后的遍历方法，难以做出，又因为是find last，所以考虑从后往前找。
 *       首先考虑一下几种情况："hello word", "", " ", "a","a  ";  然后想解法
@@ -35,3 +34,28 @@ public class Solution {
 *       3.start-end 得出长度   
 *       ** 因为start代表的是last word的第一个字符前的空格的位置，如果没有空格，则不会给start赋值，所以看作start自动减1，因此默认值为-1。
 */
+    
+    // 九章方法
+    public int solution2(String s) {
+        if (s == null) {
+            return 0;
+        }
+        int length = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (length == 0) {
+                if (s.charAt(i) == ' ') {
+                    continue;
+                } else {
+                    length++;
+                }
+            } else {
+                if (s.charAt(i) == ' ') {
+                    break;
+                } else {
+                    length++;
+                }
+            }
+        }
+        return length;
+    }
+}
