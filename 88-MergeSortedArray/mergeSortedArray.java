@@ -17,6 +17,7 @@ public class Solution {
                 i--;
             } else {
                 nums1[i + j + 1] = nums2[j];
+                j--;
             }
         }
     }
