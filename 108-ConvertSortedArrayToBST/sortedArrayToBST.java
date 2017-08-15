@@ -1,6 +1,12 @@
 /*
 *   Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
 */
+
+// Assume a BST is defined as follows:
+// The left subtree of a node contains only nodes with keys less than the node's key.
+// The right subtree of a node contains only nodes with keys greater than the node's key.
+// Both the left and right subtrees must also be binary search trees.
+
 // 可用 binary search 的类似方法来做这道题，左边小于root，root小于右边，与二分查找的特点一致。但需注意结束的调节，以及当start和
 // end为同一个节点时的处理
 
