@@ -19,7 +19,7 @@ public class Solution {
         }
         return max;
     }
-    
+    //  可参考max subarray，滑动窗口，在这个过程中记录下max
     public int maxProfit(int[] prices) {
         if (prices == null) return 0;
         int max = 0;
