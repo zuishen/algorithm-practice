@@ -1,3 +1,9 @@
+/*
+*   Given a string, find the length of the longest substring without repeating characters.
+*   "abcabcbb" -> "abc" -> 3
+*   "bbbbbb" -> "b" -> 1
+*   "pwwkew" -> "wke" -> 3
+*/
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         if (s == null || s.length() == 0) {
