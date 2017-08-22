@@ -82,3 +82,10 @@ public class Solution {
         // right 和 left 超过范围才会返回，-1 将多余的left部分除去，而right多加的1则之后算在了长度里（end - start + 1）
     }
 }
+
+
+// Find Longest Common Substring
+//  因为palindrome reverse是会变的，非palindrome部分reverse后改变了，所以共同的部分则是palindrome substring
+//  但是这样有漏洞，字符串自身可包含这种子串。
+//  所以每次reverse后找出公共子串，并且common1的首字符的position应当等于相应地reverse的位置
+
