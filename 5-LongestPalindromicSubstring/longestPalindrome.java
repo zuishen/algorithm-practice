@@ -16,6 +16,7 @@
 // 使用动态规划方法 建立一个二维数组，A[i][j], i表示起点位置，j表示重点位置，值代表该子串是否为回文串
 // 然后首先给[i][i]赋值为1，然后通过判断赋值[i][i+1] (即，以字符串长度为递增量)
 // 然后以长度为2，起点为0开始，根据条件s.charAt(i) == s.charAt(i + j) && A[i+1][i+j-1]判断
+// O(n^2), O(n^2)
 
 public class Solution {
     public String longestPalindromeDP(String s) {
@@ -48,5 +49,35 @@ public class Solution {
             }
         }
         return s.substring(start, start + maxLength);   // [start, end)
+    }
+    
+// 寻找中心，然后向外扩展，中心共有 2n-1个，因此循环遍历每个中心，在用一个循环扩展
+    public String longestPalindrome(String s) {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+        int maxLength = 0;
+        int start = 0;
+        int end = 0;
+        
+        for (int i = 0; i < s.length(); i++) {
+            int len1 = expandCenter(s, i, i);
+            int len2 = expandCenter(s, i, i + 1);
+            int tmp = Math.max(len1, len2);
+            if (maxLength < tmp) {
+                maxLength = tmp;
+                start = i - (maxLength - 1) / 2;
+                end = i + maxLength / 2;
+            }
+        }
+        return s.substring(start, end + 1);
+    }
+    
+    private int expandCenter(String str, int left, int right) {
+        while (left >= 0 && right < str.length() && str.charAt(left) == str.charAt(right)) {
+            left--;
+            right++;
+        }
+        return right - left - 1;
     }
 }
