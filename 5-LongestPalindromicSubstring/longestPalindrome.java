@@ -79,5 +79,6 @@ public class Solution {
             right++;
         }
         return right - left - 1;
+        // right 和 left 超过范围才会返回，-1 将多余的left部分除去，而right多加的1则之后算在了长度里（end - start + 1）
     }
 }
