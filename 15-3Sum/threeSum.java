@@ -31,6 +31,7 @@ class Solution {
         return result;
     }
     
+    // 注意：！！ Collections.sort(), Arrays.sort() 的返回值都是void!
     private void addResult(int i, int target, int[] nums, List<List<Integer>> ret) {
         int j = nums.length - 1;
         while (i < j) {
